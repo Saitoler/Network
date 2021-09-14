@@ -15,9 +15,9 @@
 
 ### 步骤1
 客户端发送  Client Hello 报文开始 SSL 通信，报文中包含：  
-> 客户端支持的 SSL 的指定版本  
-> 加密组件列表， 如下图所示  
-> 随机数 Random_c, 用于生成后续对称密钥交互过程中用于加密的 session keys
+> 	- 客户端支持的 SSL 的指定版本  
+> 	- 加密组件列表， 如下图所示  
+> 	- 随机数 Random_c, 用于生成后续对称密钥交互过程中用于加密的 session keys
 
 ![client hello](https://github.com/Saitoler/Network/blob/master/pics/client_hello%E6%95%B0%E6%8D%AE%E5%8C%85.png)
 
@@ -26,9 +26,9 @@
 
 ### 步骤2
 服务器若可进行 SSL 通信时，会以 Server Hello 报文作为应答，报文中包含：  
-> SSL 版本信息
-> 加密组件信息 --- 加密组件你内容是从接收到客户端加密组件内筛选出来的
-> Random_S: 随机数，用于生成后续对称加密交互过程要用的 session key
+> 	- SSL 版本信息  
+> 	- 加密组件信息 --- 加密组件你内容是从接收到客户端加密组件内筛选出来的  
+> 	- Random_S: 随机数，用于生成后续对称加密交互过程要用的 session key  
 ![server hello](https://github.com/Saitoler/Network/blob/master/pics/server_hello%E6%95%B0%E6%8D%AE%E5%8C%85.png)
 
 
