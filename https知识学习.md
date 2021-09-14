@@ -29,6 +29,16 @@
 > 	- SSL 版本信息  
 > 	- 加密组件信息 --- 加密组件你内容是从接收到客户端加密组件内筛选出来的  
 > 	- Random_S: 随机数，用于生成后续对称加密交互过程要用的 session key  
-![server hello](https://github.com/Saitoler/Network/blob/master/pics/server_hello%E6%95%B0%E6%8D%AE%E5%8C%85.png)
+![server hello](https://github.com/Saitoler/Network/blob/master/pics/server_hello%E6%95%B0%E6%8D%AE%E5%8C%85.png)  
+
+### 步骤3  
+服务器发送 Certificate 报文，报文中包含公开密钥证书  
+如下图，网页中查看百度的证书信息， 可以看到根证书下还有两级证书链，在服务器发送 Certificate 报文中，这两个证书信息都包含在报文中。  
+
+![certificate数据包](https://github.com/Saitoler/Network/blob/master/pics/certificate%E6%95%B0%E6%8D%AE%E5%8C%85.png)
+
+### 步骤4  
+
+
 
 
