@@ -38,6 +38,33 @@
 ![certificate数据包](https://github.com/Saitoler/Network/blob/master/pics/certificate%E6%95%B0%E6%8D%AE%E5%8C%85.png)
 
 ### 步骤4  
+服务器接着发送 Server Hello Done 报文，通知客户端第一阶段的 SSL 握手协商部分结束  
+![server hello done 数据包](https://github.com/Saitoler/Network/blob/master/pics/server_hello_done%E6%95%B0%E6%8D%AE%E5%8C%85.png)。
+
+### 步骤5
+客户端发送 Client Key Exchange 报文，报文中包含通信加密中使用的一种称为 Pre-master secret 的随机密码串  
+这个 pre-master secret 与前面 client 和 server 分别发送的 Random 随机数一起， 客户端与服务端会使用相同  
+的算法，使用这三个随机数再生成一个随机数， 用于后续的对称密钥加密，即 session key.  
+
+注意，这里报文中还带了 TLS 的版本号，之所以这里再带一次，是因为之前版本号是明文传输的，攻击者可能会恶意更改为较低  
+的版本号，从而降低连接的安全系统方便其发起攻击。  
+
+![client key exchange 数据包](https://github.com/Saitoler/Network/blob/master/pics/client_key_exchange%E6%95%B0%E6%8D%AE%E5%8C%85.png)
+
+### 步骤6  
+客户端继续发送 Change Cipher Spec 报文， 此报文会告知服务器，接下来的 Client  Finish 消息，将会用刚才协商的密钥  
+Session key 来加密。  
+
+### 步骤7  
+客户端发送 Client Finished报文，此消息中，会列举客户端上面用到的所有加密字段，并计算出他们的 Hash 值，并用 Session key 加密处理。  
+
+### 步骤8  
+服务器向客户端发送 Change Cipher Spec 报文， 通知客户端接下来的消息会用 Session key 来加密  
+
+### 步骤9
+服务端发送 Server Finished 报文，同样的， 对服务器端整个协商阶段用到的所有字段算一个 Hash, 并用 Session key 加密  
+
+## HTTPS 发展历程
 
 
 
