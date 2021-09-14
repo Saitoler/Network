@@ -13,3 +13,11 @@
 
 ![ssl协商数据包](https://github.com/Saitoler/Network/blob/master/pics/SSL%20%E5%8D%8F%E5%95%86%E4%BA%A4%E4%BA%92%E8%BF%87%E7%A8%8B.jpg)
 
+### 步骤1
+客户端发送  Client Hello 报文开始 SSL 通信，报文中包含：  
+	> 1 客户端支持的 SSL 的指定版本  
+	> 2 加密组件列表， 如下图所示
+	> 3 随机数 Random_c, 用于生成后续对称密钥交互过程中用于加密的 session keys
+	![client hello](https://github.com/Saitoler/Network/blob/master/pics/client_hello%E6%95%B0%E6%8D%AE%E5%8C%85.png)
+
+
